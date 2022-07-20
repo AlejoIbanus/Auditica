@@ -13,7 +13,7 @@ router.post('/',authMiddleware, uploadMiddleware.single('myfile'),  checkRol(['a
 
 router.get('/:id',authMiddleware, validatorGetItem,getItem)
 
-router.put('/:id', authMiddleware,validatorGetItem,validatorCreateItems, updateItems)
+router.post('/:id', authMiddleware,validatorGetItem, updateItems)
 
 router.delete('/:id',authMiddleware, validatorGetItem, deleteItems)
 

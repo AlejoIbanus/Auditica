@@ -14,9 +14,7 @@ const tracksScheme = new mongoose.Schema(
                 duration : {
                     type:String
                         },
-                       decade  : {
-                            type:String
-                                },
+                       
         mediaId : {
             type:mongoose.Types.ObjectId
                 }

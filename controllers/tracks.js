@@ -59,11 +59,13 @@ const createItems = async (req,res) => {
 
 const updateItems = async (req,res) => {
     try{
-        const {id, ...body} = matchedData(req);
-        const data = await tracksModel.findOneAndUpdate(id,body)
+        const id = req.params.id;
+        const datatrack = req.body;
+        const data = await tracksModel.findOneAndUpdate({_id:id},datatrack,{new:true})
+        console.log(data)
         res.send(data)
         } catch(e){
-            res.status(401).send({ message:'error en update items'})
+            res.status(401).send(console.log(e))
         }
         
 }
